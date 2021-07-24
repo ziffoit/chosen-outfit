@@ -5,7 +5,7 @@ db.once('open', async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Food' },
+    { name: 'Shirts' },
     { name: 'Household Supplies' },
     { name: 'Electronics' },
     { name: 'Books' },
@@ -24,7 +24,7 @@ db.once('open', async () => {
       image: 'cookie-tin.jpg',
       category: categories[0]._id,
       price: 2.99,
-      quantity: 500
+      quantity: 5
     },
     {
       name: 'Canned Coffee',
