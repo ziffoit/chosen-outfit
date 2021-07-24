@@ -13,6 +13,9 @@ import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+// ----------Added by Cody-----------------
+import Upload from './pages/Upload';
+//-----------------------------------------
 import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
@@ -57,6 +60,7 @@ function App() {
               <Route exact path="/myCloset" component={myCloset} />
               {/*-------------------------------------------------*/}
               <Route exact path="/products/:id" component={Detail} />
+              <Route exact path="/picUpload" component={Upload} />
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
