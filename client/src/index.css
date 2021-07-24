@@ -155,6 +155,9 @@ input:focus {
 }
 
 .mx-1 {
+  /*-----Added by Eric to get rid of bullet points----*/
+  display: unset;
+   /*-----Added by Eric to get rid of bullet points----*/
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
 }

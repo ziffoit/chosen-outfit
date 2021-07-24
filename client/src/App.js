@@ -60,7 +60,9 @@ function App() {
               <Route exact path="/myCloset" component={myCloset} />
               {/*-------------------------------------------------*/}
               <Route exact path="/products/:id" component={Detail} />
+               {/*added by Cody-----------------------------------*/}
               <Route exact path="/picUpload" component={Upload} />
+                {/*-------------------------------------------------*/}
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
