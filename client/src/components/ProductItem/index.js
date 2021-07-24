@@ -54,7 +54,8 @@ function ProductItem(item) {
 				<Link to={`/products/${_id}`}>
 					<p>{name}</p>
 				</Link>
-					<div>{quantity} {pluralize("item", quantity)} in stock</div>
+					{/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
+					<div>Size: XL</div>
 					<span>${price}</span>
 				</div>
 				<button onClick={addToCart}>Add to cart</button>

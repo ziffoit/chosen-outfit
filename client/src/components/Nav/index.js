@@ -18,11 +18,18 @@ function Nav() {
            {/*---------------- -------------*/}
          
           <li className="mx-1">
+            <Link to="/store">
+              Store
+            </Link>
+          </li>
+
+          <li className="mx-1">
             <Link to="/orderHistory">
               Order History
             </Link>
           </li>
-          {/*----------Added by Eric-------*/}
+          
+          {/*----------Added by Cody-------*/}
           <li className="mx-1">
             <Link to="/picUpload">
               Upload
