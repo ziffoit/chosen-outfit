@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // import Auth from '../utils/auth';
 // import { UPLOAD } from '../utils/mutations';
 import Form from 'react-bootstrap/Form'
+
 function Upload(props) {
 
 	return (

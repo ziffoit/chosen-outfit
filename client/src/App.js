@@ -15,6 +15,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 // ----------Added by Cody-----------------
 import Upload from './pages/Upload';
+import Store from './pages/Store';
 //-----------------------------------------
 import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
@@ -62,7 +63,8 @@ function App() {
               <Route exact path="/products/:id" component={Detail} />
                {/*added by Cody-----------------------------------*/}
               <Route exact path="/picUpload" component={Upload} />
-                {/*-------------------------------------------------*/}
+              <Route exact path="/store" component={Store} />
+              {/*-------------------------------------------------*/}
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>

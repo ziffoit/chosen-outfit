@@ -2,16 +2,15 @@ import React from "react";
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
-import Login from "../pages/Login"
 
-
-const Home = () => {
+const Store = () => {
   return (
     <div className="container">
-      {/* Johnathan's code here */}
-    <Login />
+      <CategoryMenu />
+      <ProductList />
+      <Cart />
     </div>
   );
 };
 
-export default Home;
+export default Store;

@@ -1,6 +1,6 @@
 import React from "react";
 //added by Eric-----------------------------------
-import myClosetDnD from "../components/myClosetDnD";
+import viewMyCloset from "../components/viewMyCloset";
 //--------------------------------------------------
 import CategoryMenu from "../components/CategoryMenu";
 
@@ -10,7 +10,7 @@ const myCloset = () => {
     <div className="container">
       <CategoryMenu />
 {/*added by Eric-----------------------------------*/}
-      <myClosetDnD />
+      <viewMyCloset />
 {/*added by Eric-----------------------------------*/}
     </div>
   );
