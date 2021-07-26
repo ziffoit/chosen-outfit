@@ -22,7 +22,9 @@ import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 //Added by Eric ----------------
-import myCloset from './pages/myCloset';
+import MyCloset from './pages/myCloset';
+import ViewMyCloset from './pages/viewMyCloset.js';
+import Outfits from './pages/Outfits';
 //Added by Eric ----------------
 
 const httpLink = createHttpLink({
@@ -58,10 +60,12 @@ function App() {
               <Route exact path="/success" component={Success} />
               <Route exact path="/orderHistory" component={OrderHistory} />
               {/*added by Eric-----------------------------------*/}
-              <Route exact path="/myCloset" component={myCloset} />
+              <Route exact path="/myCloset" component={MyCloset} />
+              <Route exact path="/viewMyCloset" component={ViewMyCloset} />
+              <Route exact path="/outfits" component={Outfits} />
               {/*-------------------------------------------------*/}
               <Route exact path="/products/:id" component={Detail} />
-               {/*added by Cody-----------------------------------*/}
+              {/*added by Cody-----------------------------------*/}
               <Route exact path="/picUpload" component={Upload} />
               <Route exact path="/store" component={Store} />
               {/*-------------------------------------------------*/}
