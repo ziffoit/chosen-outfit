@@ -15,13 +15,13 @@ const Home = () => {
             style={{ border: '1px dotted #1a1a1a' }}>
             <Login />
         </div>
-        <div className="col-12 col-md-8 mb-3">
+        {/* <div className="col-12 col-md-8 mb-3">
           {loading ? (
             <div>Loading...</div>
           ) : (
             <Signup />
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

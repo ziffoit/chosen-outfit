@@ -1,7 +1,7 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
+  --primary: #232f3e;
+  --secondary: #f3a847;
+  --tertiary: #b12704;
   --light: #fafafa;
   --dark: #272f32;
   --error: rgb(228, 46, 1);
@@ -21,7 +21,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
@@ -34,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -91,7 +91,7 @@ button {
   font-size: 1rem;
   text-decoration: none;
   padding: 0.25rem 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: none;
   outline: none;
   cursor: pointer;
@@ -100,17 +100,17 @@ button {
 }
 
 button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 button[disabled] {
   cursor: default;
-  opacity: .8;
+  opacity: 0.8;
 }
 
-img {
+/* img {
   max-width: 100%;
-}
+} */
 
 span[role="img"] {
   cursor: default;
@@ -131,7 +131,7 @@ input {
 
 input:focus {
   border: 1px solid var(--secondary);
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -157,7 +157,7 @@ input:focus {
 .mx-1 {
   /*-----Added by Eric to get rid of bullet points----*/
   display: unset;
-   /*-----Added by Eric to get rid of bullet points----*/
+  /*-----Added by Eric to get rid of bullet points----*/
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
 }
@@ -197,11 +197,11 @@ input:focus {
   padding-bottom: var(--spacing-two);
 }
 
-.card {
+/* .card {
   width: 25%;
   text-align: center;
-	/* border-style: outset; */
-}
+  border-style: outset;
+} */
 
 .error-text {
   color: var(--error);
@@ -213,13 +213,12 @@ input:focus {
   }
 }
 
-
+/* -------Added By Cody for product flip animation-------
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -239,7 +238,8 @@ input:focus {
 }
 
 /* Position the front and back side */
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -249,7 +249,7 @@ input:focus {
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: #bbb;
+  background-color: rgb(255, 255, 255);
   color: black;
 }
 
@@ -259,3 +259,52 @@ input:focus {
   color: rgb(0, 0, 0);
   transform: rotateY(180deg);
 }
+
+.cardBack{
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	border: 5px solid black !important;
+	border-radius: 10px;
+}
+
+/* To get the image to be contained in the flip card */
+.productImg{
+	object-fit: contain;
+	height: 95%;
+}
+/* ---------------------------------- */
+
+/* -------Added by Cody for a better login screen------- */
+.loginCont {
+  border: 1px black solid;
+  width: 200px;
+}
+
+/* ---------------------------------- */
+
+/* -------Added by Cody for footer------- */
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgb(0, 40, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 40, 255, 1) 0%,
+    rgba(0, 8, 100, 1) 100%
+  );
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-width: 320px;
+  font-weight: 500;
+}
+
+.footerCopy {
+	color: #f1f1f1;
+  margin: 15px 0px 0px 15px;
+}
+
+/* ---------------------------------- */

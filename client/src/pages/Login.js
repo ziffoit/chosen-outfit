@@ -30,7 +30,7 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
+    <div className="my-1 loginCont mx-auto">
       <Link to="/signup">← Go to Signup</Link>
 
       <h2>Login</h2>
