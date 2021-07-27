@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 import { NEW_ITEM } from '../utils/mutations';
 
 function NewItem(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ name: '', description: '', image: null, quantity: 0, price: '', category: '' });
   const [NewItem] = useMutation(NEW_ITEM);
 
   const handleFormSubmit = async (event) => {
@@ -49,7 +49,7 @@ function NewItem(props) {
           <input
             placeholder="Name"
             name="Name"
-            type="Name"
+            type="text"
             id="name"
             onChange={handleChange}
           />
@@ -59,7 +59,7 @@ function NewItem(props) {
           <input
             placeholder="Description"
             name="Description"
-            type="Description"
+            type="text"
             id="description"
             onChange={handleChange}
           />
@@ -69,8 +69,9 @@ function NewItem(props) {
           <input
             placeholder="Image"
             name="Image"
-            type="Image"
+            type="image"
             id="image"
+            alt="clothing image"
             onChange={handleChange}
           />
         </div>
@@ -79,7 +80,7 @@ function NewItem(props) {
           <input
             placeholder="Quantity"
             name="Quantity"
-            type="Quantity"
+            type="number"
             id="quantity"
             onChange={handleChange}
           />
@@ -89,18 +90,18 @@ function NewItem(props) {
           <input
             placeholder="Price"
             name="Price"
-            type="Price"
+            type="text"
             id="price"
             onChange={handleChange}
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="quantity">Quantity:</label>
+          <label htmlFor="category">Category:</label>
           <input
-            placeholder="Quantity"
-            name="Quantity"
-            type="Quantity"
-            id="quantity"
+            placeholder="Category"
+            name="Category"
+            type="text"
+            id="category"
             onChange={handleChange}
           />
         </div>
