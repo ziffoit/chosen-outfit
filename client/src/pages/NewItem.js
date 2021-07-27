@@ -5,19 +5,20 @@ import Auth from '../utils/auth';
 import { NEW_ITEM } from '../utils/mutations';
 
 function NewItem(props) {
-  const [formState, setFormState] = useState({ name: '', description: '', image: null, quantity: 0, price: '', category: '' });
-  const [NewItem] = useMutation(NEW_ITEM);
+  const [formState, setFormState] = useState({ name: '', description: '', image: null, quantity: 0, price: '', category: '', size: '' });
+  const [newItem] = useMutation(NEW_ITEM);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await NewItem({
+    const mutationResponse = await newItem({
       variables: {
         name: formState.name,
         description: formState.description,
         image: formState.image,
         quantity: formState.quantity,
         price: formState.price,
-        category: formState.category
+        category: formState.category,
+        size: formState.size
       },
     });
     const token = mutationResponse.data.addUser.token;
@@ -102,6 +103,16 @@ function NewItem(props) {
             name="Category"
             type="text"
             id="category"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="size">Size:</label>
+          <input
+            placeholder="Size"
+            name="Size"
+            type="text"
+            id="size"
             onChange={handleChange}
           />
         </div>
