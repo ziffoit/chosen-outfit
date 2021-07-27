@@ -24,6 +24,7 @@ export const QUERY_CHECKOUT = gql`
   }
 `;
 
+//-------------Eric replaced quantity with size-----------
 export const QUERY_ALL_PRODUCTS = gql`
   {
     products {
@@ -31,7 +32,7 @@ export const QUERY_ALL_PRODUCTS = gql`
       name
       description
       price
-      quantity
+      size
       category {
         name
       }
