@@ -4,125 +4,131 @@ const { User, Product, Category } = require('../models');
 db.once('open', async () => {
   await Category.deleteMany();
 
+  //----------Eric Editing Categories----------
   const categories = await Category.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+    { name: 'Accessories' }, //0
+    { name: 'Dresses' },     //1
+    { name: 'Jackets' },     //2
+    { name: 'Hats' },        //3
+    { name: 'Pants' },       //4
+    { name: 'Shirts' },      //5
+    { name: 'Shoes' },       //6
+    { name: 'Socks' },       //7
+    { name: 'Shorts' },      //8
+    { name: 'Underware' }    //9
   ]);
-
+//----------Eric Editing Categories And Products---------------
   console.log('categories seeded');
 
   await Product.deleteMany();
 
   const products = await Product.insertMany([
     {
-      name: 'Tin of Cookies',
+      name: "70's Socks",
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
-      category: categories[0]._id,
+      image: '70s-socks.jpg',
+      category: categories[7]._id,
       price: 2.99,
-      quantity: 500
+      size: 'S'
     },
     {
-      name: 'Canned Coffee',
+      name: 'Dreamy Socks',
       description:
         'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
-      category: categories[0]._id,
+      image: 'dreamy-socks.jpg',
+      category: categories[7]._id,
       price: 1.99,
-      quantity: 500
+      size: 'L'
     },
     {
-      name: 'Toilet Paper',
-      category: categories[1]._id,
-      description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
-      price: 7.99,
-      quantity: 20
-    },
-    {
-      name: 'Handmade Soap',
-      category: categories[1]._id,
-      description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
-      price: 3.99,
-      quantity: 50
-    },
-    {
-      name: 'Set of Wooden Spoons',
-      category: categories[1]._id,
-      description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
-      price: 14.99,
-      quantity: 100
-    },
-    {
-      name: 'Camera',
-      category: categories[2]._id,
-      description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'camera.jpg',
-      price: 399.99,
-      quantity: 30
-    },
-    {
-      name: 'Tablet',
-      category: categories[2]._id,
-      description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'tablet.jpg',
-      price: 199.99,
-      quantity: 30
-    },
-    {
-      name: 'Tales at Bedtime',
+      name: 'Pilot Hat',
       category: categories[3]._id,
       description:
+        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
+      image: 'pilot-hat.jpg',
+      price: 7.99,
+      size: 'M'
+    },
+    {
+      name: 'Avs Hat',
+      category: categories[3]._id,
+      description:
+        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
+      image: 'Avs-hat.jpg',
+      price: 3.99,
+      size: 'L'
+    },
+    {
+      name: 'Black Cowboy Hat',
+      category: categories[3]._id,
+      description:
+        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
+      image: 'black-cowboy-hat.jpg',
+      price: 14.99,
+      size: 'XL'
+    },
+    {
+      name: 'Dark Gray Pants',
+      category: categories[4]._id,
+      description:
+        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
+      image: 'dark-grey-pants.jpg',
+      price: 399.99,
+      size: 'L'
+    },
+    {
+      name: 'Cargo Pants',
+      category: categories[4]._id,
+      description:
+        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
+      image: 'cargo-pants.jpg',
+      price: 199.99,
+      size: 'S'
+    },
+    {
+      name: 'Black Shirt',
+      category: categories[5]._id,
+      description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'bedtime-book.jpg',
+      image: 'black-shirt.jpg',
       price: 9.99,
-      quantity: 100
+      size: 'XXL'
     },
     {
-      name: 'Spinning Top',
-      category: categories[4]._id,
+      name: 'Plaid Long Sleeve Shirt',
+      category: categories[5]._id,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
+      image: 'plaid-long-sleeve-shirt.jpg',
       price: 1.99,
-      quantity: 1000
+      size: 'XXXL'
     },
     {
-      name: 'Set of Plastic Horses',
-      category: categories[4]._id,
+      name: 'Black Shorts',
+      category: categories[8]._id,
       description:
         'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'plastic-horses.jpg',
+      image: 'black-shorts.jpg',
       price: 2.99,
-      quantity: 1000
+      size: 'M'
     },
     {
-      name: 'Teddy Bear',
-      category: categories[4]._id,
+      name: 'Black Van Shoes',
+      category: categories[6]._id,
       description:
         'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'teddy-bear.jpg',
+      image: 'black-van-shoes.jpg',
       price: 7.99,
-      quantity: 100
+      size: '12'
     },
     {
-      name: 'Alphabet Blocks',
-      category: categories[4]._id,
+      name: 'USA Briefs',
+      category: categories[9]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'USA-briefs.jpg',
       price: 9.99,
-      quantity: 600
+      size: 'L'
     }
   ]);
 

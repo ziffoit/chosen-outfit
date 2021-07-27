@@ -15,11 +15,18 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 // ----------Added by Cody-----------------
 import Upload from './pages/Upload';
+import Store from './pages/Store';
+import Footer from './components/Footer/footer'
 //-----------------------------------------
-import Nav from './components/Nav';
+import Navbar from './components/Navbar';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
+//Added by Eric ----------------
+import MyCloset from './pages/myCloset';
+import ViewMyCloset from './pages/viewMyCloset.js';
+import Outfits from './pages/Outfits';
+//Added by Eric ----------------
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -46,17 +53,26 @@ function App() {
       <Router>
         <div>
           <StoreProvider>
-            <Nav />
+            <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/success" component={Success} />
               <Route exact path="/orderHistory" component={OrderHistory} />
+              {/*added by Eric-----------------------------------*/}
+              <Route exact path="/myCloset" component={MyCloset} />
+              <Route exact path="/viewMyCloset" component={ViewMyCloset} />
+              <Route exact path="/outfits" component={Outfits} />
+              {/*-------------------------------------------------*/}
               <Route exact path="/products/:id" component={Detail} />
+              {/*added by Cody-----------------------------------*/}
               <Route exact path="/picUpload" component={Upload} />
+              <Route exact path="/store" component={Store} />
+              {/*-------------------------------------------------*/}
               <Route component={NoMatch} />
             </Switch>
+						<Footer />
           </StoreProvider>
         </div>
       </Router>
