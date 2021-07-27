@@ -213,7 +213,7 @@ input:focus {
   }
 }
 
-
+/* -------Added By Cody for product flip animation-------
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
@@ -259,3 +259,16 @@ input:focus {
   color: rgb(0, 0, 0);
   transform: rotateY(180deg);
 }
+/* ---------------------------------- */
+
+/* -------Added by Cody for a better login screen------- */
+.loginCont {
+	border: 1px black solid;
+	width: 200px;
+}
+
+
+/* ---------------------------------- */
+
+
+
