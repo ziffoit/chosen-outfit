@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+//--------------Eric replaced quantity with size------
 const productSchema = new Schema({
   name: {
     type: String,
@@ -19,10 +20,10 @@ const productSchema = new Schema({
     required: true,
     min: 0.99
   },
-  quantity: {
-    type: Number,
-    min: 0,
-    default: 0
+  size: {
+    type: 'string',
+    required: true,
+    trim: true
   },
   category: {
     type: Schema.Types.ObjectId,

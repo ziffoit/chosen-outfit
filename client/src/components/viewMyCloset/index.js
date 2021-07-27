@@ -8,13 +8,13 @@ function myCloset(item) {
 		image,
 		name,
 		_id,
-		price,
 		size
 	} = item;
 
 
 	return (
-		<div className="card flip-card px-1 py-1">
+
+		<div className="card flip-card">
 			<div className="flip-card-inner">
 				<div className="flip-card-front">
 					<Link to={`/products/${_id}`}>
@@ -29,15 +29,13 @@ function myCloset(item) {
 					<p>{name}</p>
 				</Link>
 					{/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
-					<div>Size: XL</div>
-					<span>${price}</span>
-	
+					<div>{size}</div>
+
 			<div>
 			</div>
-      </div>
-      </div>
-      </div>
-	
+    </div>
+    </div>
+    </div>
 	);
 }
 

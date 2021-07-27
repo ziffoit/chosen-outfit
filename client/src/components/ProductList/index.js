@@ -55,9 +55,9 @@ function ProductList() {
               image={product.image}
               name={product.name}
               price={product.price}
-              /*---------added by Eric Dodgion-------*/ 
+              /*---------added by Eric Dodgion-------*/
               size={product.size}
-              /*---------added by Eric Dodgion-------*/ 
+              /*---------added by Eric Dodgion-------*/
             />
           ))}
         </div>
