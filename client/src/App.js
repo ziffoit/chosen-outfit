@@ -16,6 +16,7 @@ import Signup from './pages/Signup';
 // ----------Added by Cody-----------------
 import Upload from './pages/Upload';
 import Store from './pages/Store';
+import Footer from './components/Footer/footer'
 //-----------------------------------------
 import Navbar from './components/Navbar';
 import { StoreProvider } from './utils/GlobalState';
@@ -71,6 +72,7 @@ function App() {
               {/*-------------------------------------------------*/}
               <Route component={NoMatch} />
             </Switch>
+						<Footer />
           </StoreProvider>
         </div>
       </Router>

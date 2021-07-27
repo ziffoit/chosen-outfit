@@ -4,8 +4,9 @@ import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-  background: #000033;
-  height: 80px;
+	background: rgb(0,40,255);
+	background: linear-gradient(0deg, rgba(0,40,255,1) 0%, rgba(0,8,100,1) 100%);
+  height: 90px;
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
@@ -18,6 +19,7 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   padding: 8px;
   height: 100%;
+	margin-top: 10px;
   cursor: pointer;
 
   &.active {
@@ -74,6 +76,7 @@ export const NavBtnLink = styled(Link)`
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   margin-left: 24px;
+	margin-top: 5px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -81,3 +84,7 @@ export const NavBtnLink = styled(Link)`
     color: #010606;
   }
 `;
+
+// export const ImgSize = styled.nav`
+// 	padding-top: 10px
+// `;
