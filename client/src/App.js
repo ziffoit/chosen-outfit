@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import NewItem from './pages/NewItem';
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
@@ -70,6 +71,7 @@ function App() {
               <Route exact path="/picUpload" component={Upload} />
               <Route exact path="/store" component={Store} />
               {/*-------------------------------------------------*/}
+              <Route exact path="/newItem" component={NewItem} />
               <Route component={NoMatch} />
             </Switch>
 						<Footer />
