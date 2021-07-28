@@ -33,7 +33,7 @@ function DragNDrop({data}) {
                 newList[targetItem.grpI].items.splice(targetItem.itemI, 0, newList[currentItem.grpI].items.splice(currentItem.itemI,1)[0]);
                 // newList[targetItem.grpI].items.splice(targetItem.itemI, 0, newList[dragItem.current.grpI].items.splice(dragItem.current.itemI,1)[0]);
                 dragItem.current = targetItem;
-                // localStorage.setItem('List', JSON.stringify(newList));
+                localStorage.setItem('List', JSON.stringify(newList));
                 return newList;
             })
         }

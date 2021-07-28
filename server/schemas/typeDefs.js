@@ -24,12 +24,19 @@ const typeDefs = gql`
     products: [Product]
   }
 
+	type Closet {
+		_id: ID
+		wornDate: String
+		products: [Product]
+	}
+
   type User {
     _id: ID
     firstName: String
     lastName: String
     email: String
     orders: [Order]
+		clothes: [Closet]
   }
 
   type Checkout {

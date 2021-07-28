@@ -7,7 +7,7 @@ export const QUERY_PRODUCTS = gql`
       name
       description
       price
-      quantity
+      size
       image
       category {
         _id
@@ -64,6 +64,20 @@ export const QUERY_USER = gql`
           price
           quantity
           image
+					size
+        }
+      }
+      clothes {
+        _id
+        wornDate
+        products {
+          _id
+          name
+          description
+          price
+          quantity
+          image
+					size
         }
       }
     }

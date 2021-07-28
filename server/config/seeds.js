@@ -15,7 +15,7 @@ db.once('open', async () => {
     { name: 'Shoes' },       //6
     { name: 'Socks' },       //7
     { name: 'Shorts' },      //8
-    { name: 'Underware' }    //9
+    { name: 'Underwear' }    //9
   ]);
 //----------Eric Editing Categories And Products---------------
   console.log('categories seeded');
@@ -153,6 +153,23 @@ db.once('open', async () => {
     lastName: 'Holt',
     email: 'eholt@testmail.com',
     password: 'password12345'
+  });
+
+	await User.create({
+    firstName: 'testF',
+    lastName: 'testL',
+    email: 'test@test.com',
+    password: 'password',
+		orders: [
+      {
+        products: [products[0]._id, products[1]._id, products[2]._id]
+      }
+    ],
+		clothes: [
+      {
+        products: [products[0]._id, products[2]._id, products[3]._id, products[4]._id, products[5]._id, products[6]._id]
+      }
+    ]
   });
 
   console.log('users seeded');
