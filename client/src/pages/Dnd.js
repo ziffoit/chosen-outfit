@@ -2,22 +2,22 @@ import React, { useEffect, useState } from 'react';
 import '../components/DnD/dnd.css';
 import DragNDrop from '../components/DnD/dnd'
 
-const data = [
-	{ title: 'group 1', items: ['1', '2'] },
-	{ title: 'group 2', items: ['3', '4', '5'] },
-	{ title: 'group 3', items: ['6', '7', '8'] }
+const defaultData = [
+	{ title: 'My Clothes', items: ['1', '2'] },
+	{ title: 'Day Outfit', items: ['3', '4', '5'] },
+	{ title: 'Clubbin Outfit', items: ['6', '7', '8'] }
 ]
 
 function Drag() {
-	// const [data, setData] = useState();
-	// useEffect(() => {
-	// 	if (localStorage.getItem('List')) {
-	// 		console.log(localStorage.getItem('List'))
-	// 		setData(JSON.parse(localStorage.getItem('List')))
-	// 	} else {
-	// 		setData(defaultData)
-	// 	}
-	// }, [setData])
+	const [data, setData] = useState();
+	useEffect(() => {
+		if (localStorage.getItem('List')) {
+			console.log(localStorage.getItem('List'))
+			setData(JSON.parse(localStorage.getItem('List')))
+		} else {
+			setData(defaultData)
+		}
+	}, [setData])
 	return (
 		<div className="App-dnd">
 			<header className="App-dnd-header">
