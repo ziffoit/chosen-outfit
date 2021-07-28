@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../components/DnD/dnd.css';
-import DragNDrop from '../components/DnD/dnd'
+import DragNDrop from '../components/DnD/dnd';
+// import { QUERY_USER } from '../utils/queries';
+// import { useQuery } from '@apollo/client';
 
 const defaultData = [
 	{ title: 'My Clothes', items: ['1', '2'] },
@@ -8,8 +10,10 @@ const defaultData = [
 	{ title: 'Clubbin Outfit', items: ['6', '7', '8'] }
 ]
 
+
 function Drag() {
 	const [data, setData] = useState();
+
 	useEffect(() => {
 		if (localStorage.getItem('List')) {
 			console.log(localStorage.getItem('List'))
@@ -18,6 +22,7 @@ function Drag() {
 			setData(defaultData)
 		}
 	}, [setData])
+
 	return (
 		<div className="App-dnd">
 			<header className="App-dnd-header">
@@ -28,51 +33,3 @@ function Drag() {
 }
 
 export default Drag;
-
-
-
-{/* <div className="drag-n-drop">
-					{data.map((grp, grpI) => (
-						<div key={grp.title} className="dnd-group">
-							{grp.items.map((item, itemI) => (
-								<div draggable key={item} className="dnd-item">
-									{item}
-								</div>
-							))}
-						</div>
-					))}
-				</div> */}
-
-{/* <div className="drag-n-drop">
-					<div className="dnd-group">
-						<div className="group-title">Group 1</div>
-						<div className="dnd-item">
-							<div>
-								<p>ITEM 1</p>
-							</div>
-						</div>
-						<div className="dnd-item">
-							<div>
-								<p>ITEM 2</p>
-							</div>
-						</div>
-						<div className="dnd-item">
-							<div>
-								<p>ITEM 3</p>
-							</div>
-						</div>
-					</div>
-					<div className="dnd-group">
-						<div className="group-title">Group 1</div>
-						<div className="dnd-item">
-							<div>
-								<p>ITEM 1</p>
-							</div>
-						</div>
-						<div className="dnd-item">
-							<div>
-								<p>ITEM 2</p>
-							</div>
-						</div>
-					</div>
-				</div> */}
