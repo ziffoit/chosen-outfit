@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../components/DnD/dnd.css';
 import DragNDrop from '../components/DnD/dnd';
-// import { QUERY_USER } from '../utils/queries';
-// import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import { QUERY_USER } from '../utils/queries';
 
 const defaultData = [
 	{ title: 'My Clothes', items: ['1', '2'] },
@@ -13,7 +13,6 @@ const defaultData = [
 
 function Drag() {
 	const [data, setData] = useState();
-
 	useEffect(() => {
 		if (localStorage.getItem('List')) {
 			console.log(localStorage.getItem('List'))
@@ -23,8 +22,15 @@ function Drag() {
 		}
 	}, [setData])
 
+	// const { dataUser } = useQuery(QUERY_USER);
+  // let user;
+	// if (dataUser) {
+	// 	user = dataUser.user;
+	// }
+
 	return (
 		<div className="App-dnd">
+			{/* <div>{user.firstName}</div> */}
 			<header className="App-dnd-header">
 				<DragNDrop data={data} />
 			</header>
