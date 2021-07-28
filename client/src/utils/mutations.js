@@ -57,7 +57,6 @@ export const NEW_ITEM = gql`
     $image: String,
     $quantity: String,
     $price: Int,
-    $category: String!,
     $size: String!
   ) {
     newItem(
@@ -66,7 +65,6 @@ export const NEW_ITEM = gql`
       image: $image,
       quantity: $quantity,
       price: $price,
-      category: $category,
       size: $size
     ) {
       product {

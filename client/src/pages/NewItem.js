@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 import { NEW_ITEM } from '../utils/mutations';
 
 function NewItem(props) {
-  const [formState, setFormState] = useState({ name: '', description: '', image: null, quantity: 0, price: '', category: '', size: '' });
+  const [formState, setFormState] = useState({ name: '', description: '', image: null, quantity: 0, price: '', size: '' });
   const [newItem] = useMutation(NEW_ITEM);
 
   const handleFormSubmit = async (event) => {
@@ -17,7 +17,7 @@ function NewItem(props) {
         image: formState.image,
         quantity: formState.quantity,
         price: formState.price,
-        category: formState.category,
+        // category: {name:formState.category},
         size: formState.size
       },
     });
@@ -96,7 +96,7 @@ function NewItem(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        {/* <div className="flex-row space-between my-2">
           <label htmlFor="category">Category:</label>
           <input
             placeholder="Category"
@@ -105,7 +105,7 @@ function NewItem(props) {
             id="category"
             onChange={handleChange}
           />
-        </div>
+        </div> */}
         <div className="flex-row space-between my-2">
           <label htmlFor="size">Size:</label>
           <input
