@@ -18,6 +18,7 @@ import Signup from './pages/Signup';
 import Upload from './pages/Upload';
 import Store from './pages/Store';
 import Footer from './components/Footer/footer'
+import Drag from './pages/Dnd'
 //-----------------------------------------
 import Navbar from './components/Navbar';
 import { StoreProvider } from './utils/GlobalState';
@@ -70,6 +71,7 @@ function App() {
               {/*added by Cody-----------------------------------*/}
               <Route exact path="/picUpload" component={Upload} />
               <Route exact path="/store" component={Store} />
+              <Route exact path="/drag" component={Drag} />
               {/*-------------------------------------------------*/}
               <Route exact path="/newItem" component={NewItem} />
               <Route component={NoMatch} />
