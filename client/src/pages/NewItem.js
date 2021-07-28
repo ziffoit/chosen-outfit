@@ -21,8 +21,6 @@ function NewItem(props) {
         size: formState.size
       },
     });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
   };
 
   const handleChange = (event) => {
