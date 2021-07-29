@@ -18,8 +18,8 @@ function Navbar() {
           <Bars />
         <NavMenu>
 {/*----------Added by Eric-------*/}
-            <NavLink to="/myCloset" activeStyle>
-              My Closet
+            <NavLink to="/Closet" activeStyle>
+              Closet
             </NavLink>
             <NavLink to="/store" activeStyle>
               Store
