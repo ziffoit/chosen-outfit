@@ -43,9 +43,6 @@ const myCloset = () => {
     </div>
 
 
-
-
-
 );
 };
 

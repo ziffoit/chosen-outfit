@@ -1,53 +1,21 @@
 //-----------------------View My Closet added by Eric-----------------------------------
-import React from "react";
-import ViewMyCloset from "../components/viewMyCloset";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import MyCloset from "../components/viewMyCloset";
 import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 
-
-
-const viewMyCloset = () => {
-    return (
-<div style={{ backgroundImage: "url(/images/viewMyClosetBackground.jpg)",  backgroundRepeat: 'no-repeat', backgroundSize: 'cover',  backgroundPosition: 'inherit' }}>
-<div className="container">
+function ViewMyCloset() {
+  return (
+<div style={{ backgroundImage: "url(/images/viewMyClosetBackground.jpg)",  backgroundRepeat: 'no-repeat',
+backgroundSize: 'cover',  height: '100vh' }}>
+  <div className="container">
     <CategoryMenu />
-    <ViewMyCloset />
+    <MyCloset />
     <Cart />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
+  </div>
 </div>
-</div>
+  );
+}
 
-
-    )
-};
-
-export default viewMyCloset;
+export default ViewMyCloset;

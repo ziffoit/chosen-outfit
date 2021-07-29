@@ -58,7 +58,7 @@ function Navbar() {
     <Nav>
 {/*----------Added by Eric------------*/}
 <NavLink to='/' activeStyle>
-    <img src="images/threadz.png" alt='logo'/>
+    <img src="images/chosen-outfit-logo.png" alt='logo'/>
 </NavLink>
 {/*----------Added by Eric------------*/}
 <Bars />

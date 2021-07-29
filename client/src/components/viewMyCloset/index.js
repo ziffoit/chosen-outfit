@@ -1,42 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from '@apollo/client';
+import { QUERY_USER } from '../../utils/queries';
+import ClosetList from "../ClosetList";
 
-function myCloset(item) {
-	// const [state, dispatch] = useStoreContext();
 
-	const {
-		image,
-		name,
-		_id,
-		size
-	} = item;
+function MyCloset() {
 
+	const { data } = useQuery(QUERY_USER);
+	let user;
+	if (data) {
+  user = data.user;
+	}
 
 	return (
-
-		<div className="card flip-card">
-			<div className="flip-card-inner">
-				<div className="flip-card-front">
-					<Link to={`/products/${_id}`}>
-						<img
-							alt={name}
-							src={`/images/${image}`}
-						/>
-					</Link>
-				</div>
-				<div className="flip-card-back">
-				<Link to={`/products/${_id}`}>
-					<p>{name}</p>
-				</Link>
-					{/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
-					<div>{size}</div>
-
-			<div>
-			</div>
-    </div>
-    </div>
-    </div>
-	);
+    <>
+    <ClosetList />
+				{user ? (
+          <>
+            {user.orders.map((order) => (
+              <div key={order._id}>
+                  {order.products.map(({ _id, image, name, size }, index) => (
+                    <div key={index}>
+                      <Link to={`/products/${_id}`}>
+                        <img
+                        className="productImg"
+                        src={`/images/${image}`}
+                        alt={name}
+                      />
+                      </Link>
+                      <div>{size}</div>
+                    </div>
+                  ))}
+                </div>
+            ))}
+          </>
+        ) : null}
+</>
+  );
 }
 
-export default myCloset;
+export default MyCloset;

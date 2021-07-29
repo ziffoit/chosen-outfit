@@ -1,64 +1,32 @@
 //------------------Outfits page added by Eric-----------------------------------
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
+//---------------Eric added---------------------------------
+import { useQuery } from '@apollo/client';
+import { QUERY_USER } from '../../utils/queries';
 
 const itemsFromBackend = [
   {
 id: uuidv4(),
-name: 'name',
-image: '/images/black-shirt.jpg'
-},
-  {
-id: uuidv4(),
-name: 'name',
+name: 'Black Shirt',
 image: "/images/black-shirt.jpg"
 },
   {
 id: uuidv4(),
-name: 'name',
-image: "/images/black-shirt.jpg"
+name: 'Black Cowboy Hat',
+image: "/images/black-cowboy-hat.jpg"
 },
 {
 id: uuidv4(),
-name: 'name',
-image: "/images/black-shirt.jpg"
+name: 'Black Shorts',
+image: "/images/black-shorts.jpg"
 },
 {
   id: uuidv4(),
-  name: 'name',
-  image: "/images/black-shirt.jpg"
+  name: 'Black Van Shoes',
+  image: "/images/black-van-shoes.jpg"
   },
-  {
-    id: uuidv4(),
-    name: 'name',
-    image: "/images/black-shirt.jpg"
-    },
-    {
-      id: uuidv4(),
-      name: 'name',
-      image: "/images/black-shirt.jpg"
-    },  
-    {
-        id: uuidv4(),
-        name: 'name',
-        image: "/images/black-shirt.jpg"
-    },
-        {
-          id: uuidv4(),
-          name: 'name',
-          image: "/images/black-shirt.jpg"
-          },
-    {
-      id: uuidv4(),
-      name: 'name',
-      image: "/images/black-shirt.jpg"
-    },
-  {
-id: uuidv4(),
-name: 'name',
-image: "/images/black-shirt.jpg"
-}
 ];
 
 const columnsFromBackend = {
@@ -112,6 +80,13 @@ const onDragEnd = (result, columns, setColumns) => {
 
 function Outfits() {
   const [columns, setColumns] = useState(columnsFromBackend);
+  /////----------------Eric added-------------------------
+  const { data } = useQuery(QUERY_USER);
+  let user;
+  if (data) {
+    user = data.user;
+  }
+//---------------------------------------------------------
   return (
     <div style={{display: "flex", overflow: 'auto'}}>
       <DragDropContext
@@ -160,17 +135,17 @@ function Outfits() {
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
                                     style={{
-                                      userSelect: "none",
+                                      justifyContent: "center",
                                       margin: "0 0 8px 0",
                                       minHeight: "100px",
-                                      backgroundColor: snapshot.isDragging
-                                        ? "#263B4A"
-                                        : "#456C86",
-                                      color: "white",
+                                      backgroundColor: "white",
+                                      alignItems: "center",
                                       ...provided.draggableProps.style
                                     }}
                                   >
-                                    {item.image}
+                                    <div className="productImg">
+                            <img src={item.image} alt={`${item.name} Image`} />
+                          </div>
                                   </div>
                                 );
                               }}
@@ -194,108 +169,3 @@ function Outfits() {
 export default Outfits;
 
 
-
-
-
-
-
-
-// import React, { useState, useRef, useEffect } from "react";
-
-// function DragNDrop({ data }) {
-//   const [list, setList] = useState(data);
-//   const [dragging, setDragging] = useState(false);
-
-//   useEffect(() => {
-//     setList(data);
-//   }, [setList, data]);
-
-//   const dragItem = useRef();
-//   const dragItemNode = useRef();
-
-//   const handletDragStart = (e, item) => {
-//     console.log("Starting to drag", item);
-
-//     dragItemNode.current = e.target;
-//     dragItemNode.current.addEventListener("dragend", handleDragEnd);
-//     dragItem.current = item;
-
-//     setTimeout(() => {
-//       setDragging(true);
-//     }, 0);
-//   };
-//   const handleDragEnter = (e, targetItem) => {
-//     console.log("Entering a drag target", targetItem);
-
-//     const currentItem = dragItem.current;
-
-//     if (dragItemNode.current !== e.target) {
-//       console.log("Target is NOT the same as dragged item");
-//       setList((oldList) => {
-//         let newList = JSON.parse(JSON.stringify(oldList));
-//         newList[targetItem.grpI].items.splice(targetItem.itemI, 0, newList[currentItem
-//           .grpI].items.splice(currentItem.itemI,1)[0])
-//         // newList[targetItem.grpI].items.splice(targetItem.itemI, 0,newList[dragItem.
-//         //   current.grpI].items.splice(dragItem.current.itemI,1)[0]);
-//         dragItem.current = targetItem;
-//         // localStorage.setItem("List", JSON.stringify(newList));
-//         return newList;
-//       });
-//     }
-//   };
-//   const handleDragEnd = (e) => {
-//     setDragging(false);
-//     dragItem.current = null;
-//     dragItemNode.current.removeEventListener("dragend", handleDragEnd);
-//     dragItemNode.current = null;
-//   };
-//   const getStyles = (item) => {
-//     if (
-//       dragItem.current.grpI === item.grpI &&
-//       dragItem.current.itemI === item.itemI
-//     ) {
-//       return "dnd-item current";
-//     }
-//     return "dnd-item";
-//   };
-
-//   if (list) {
-//     return (
-//       <div className="drag-n-drop">
-//         {list.map((grp, grpI) => (
-//           <div
-//             key={grp.title}
-//             onDragEnter={
-//               dragging && !grp.items.length
-//                 ? (e) => handleDragEnter(e, { grpI, itemI: 0 })
-//                 : null
-//             }
-//             className="dnd-group"
-//           >
-//             {grp.items.map((item, itemI) => (
-//               <div
-//                 draggable
-//                 key={item}
-//                 onDragStart={(e) => handletDragStart(e, { grpI, itemI })}
-//                 onDragEnter={
-//                   dragging
-//                     ? (e) => {
-//                         handleDragEnter(e, { grpI, itemI });
-//                       }
-//                     : null
-//                 }
-//                 className={dragging ? getStyles({ grpI, itemI }) : "dnd-item"}
-//               >
-//                 {item}
-//               </div>
-//             ))}
-//           </div>
-//         ))}
-//       </div>
-//     );
-//   } else {
-//     return null;
-//   }
-// }
-
-// export default DragNDrop;
