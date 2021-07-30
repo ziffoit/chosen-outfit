@@ -17,6 +17,7 @@ import Signup from './pages/Signup';
 // ----------Added by Cody-----------------
 import Store from './pages/Store';
 import Footer from './components/Footer/footer'
+import Drag from './pages/Dnd'
 //-----------------------------------------
 import Navbar from './components/Navbar';
 import { StoreProvider } from './utils/GlobalState';
@@ -68,6 +69,7 @@ function App() {
               <Route exact path="/products/:id" component={Detail} />
               {/*added by Cody-----------------------------------*/}
               <Route exact path="/store" component={Store} />
+              <Route exact path="/drag" component={Drag} />
               {/*-------------------------------------------------*/}
               <Route exact path="/newItem" component={NewItem} />
               <Route component={NoMatch} />

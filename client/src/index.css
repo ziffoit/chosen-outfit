@@ -279,7 +279,24 @@ input:focus {
 /* -------Added by Cody for a better login screen------- */
 .loginCont {
   border: 1px black solid;
-  width: 200px;
+	border-radius: 15px;
+  width: 250px;
+	padding: 10px;
+	margin-top: 100px !important;
+	box-shadow: 12px 12px 15px 1px rgb(0, 30, 255);
+}
+.signupCont{
+	border: 1px black solid;
+	border-radius: 15px;
+  width: 250px;
+	padding: 10px;
+	margin-top: 100px !important;
+	box-shadow: 12px 12px 15px 1px rgb(0, 30, 255);
+
+}
+
+.loginBtnRow{
+	width: 230px;
 }
 
 /* ---------------------------------- */
@@ -305,6 +322,51 @@ input:focus {
 .footerCopy {
 	color: #f1f1f1;
   margin: 15px 0px 0px 15px;
+}
+
+/* ---------------------------------- */
+
+
+/* -------Added by Cody for home screen------- */
+.homeTitle{
+    position: absolute;
+    top: 50%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 5em;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+@media screen and (max-width: 768px) {
+  .homeTitle {
+    font-size: 3em;
+  }
+}
+
+.logo{
+	max-width:	500px ;
+}
+
+@media screen and (max-width: 429px) {
+	.logo{
+		max-width:	250px ;
+	}
 }
 
 /* ---------------------------------- */
