@@ -10,7 +10,7 @@ function NewItem(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await newItem({
+    await newItem({
       variables: {
         name: formState.name,
         description: formState.description,

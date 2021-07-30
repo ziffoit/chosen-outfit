@@ -96,10 +96,23 @@ const resolvers = {
 
       return { token, user };
     },
+
+    newItem: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      if (args.user) {
+        const item = new Order({ products });
+
+        return item;
+      }
+
+
+    },
     addOrder: async (parent, { products }, context) => {
       console.log(context);
       if (context.user) {
-        const order = new Order({ products });
+        const order = new Product({ products });
 
         await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
 
