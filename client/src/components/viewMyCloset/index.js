@@ -27,7 +27,7 @@ function MyCloset() {
                 <div className="flex-row">
                   {order.products.map(({ _id, image, name, price }, index) => (
                     <div key={index} >
-                     
+                    
                       </div>
 
                   ))}
