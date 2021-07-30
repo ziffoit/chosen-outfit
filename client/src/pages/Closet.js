@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const myCloset = () => {
   return (
-    <div style={{ backgroundImage: "url(/images/myClosetBackground.jpg)",  backgroundRepeat: 'no-repeat', backgroundSize: 'cover',  backgroundPosition: 'inherit',
-		height: '100vh', overflow: 'hidden' }}>
+    <div style={{ backgroundImage: "url(/images/myClosetBackground.jpg)",  backgroundRepeat: 'no-repeat', backgroundSize: 'cover',
+    backgroundAttachment:'fixed', height: '100vh', overflow: 'hidden' }}>
     <br />
     <br />
     <br />

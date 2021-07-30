@@ -4,7 +4,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_STORE, REMOVE_FROM_CLOSET, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
-function ProductItem(item) {
+function ClosetItem(item) {
 	const [state, dispatch] = useStoreContext();
 
 	const {
@@ -58,4 +58,4 @@ function ProductItem(item) {
 	);
 }
 
-export default ProductItem;
+export default ClosetItem;

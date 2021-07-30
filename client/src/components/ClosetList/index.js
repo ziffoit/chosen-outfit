@@ -10,6 +10,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
+import { QUERY_USER } from '../../utils/queries';
 
 function ClosetList() {
   const [state, dispatch] = useStoreContext();
@@ -17,6 +18,12 @@ function ClosetList() {
   const { currentCategory } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
+
+  const { userData } = useQuery(QUERY_USER);
+	let user;
+	if (userData) {
+  user = userData.user;
+	}
 
   useEffect(() => {
     if (data) {
@@ -49,7 +56,10 @@ function ClosetList() {
 
   return (
     <div className="my-2">
-      <h2>My Closet:</h2>
+      <h2 style={{color: "white"}}>
+            Welcome to Your Closet
+      </h2>
+
       {state.products.length ? (
         <div className="flex-row">
           {filterProducts().map((product) => (

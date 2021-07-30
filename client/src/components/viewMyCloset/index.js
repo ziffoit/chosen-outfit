@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../../utils/queries';
 import ClosetList from "../ClosetList";
+import ClosetItem from "../ClosetItem";
 
 
 function MyCloset() {
@@ -14,29 +15,29 @@ function MyCloset() {
 	}
 
 	return (
-    <>
-    <ClosetList />
-				{user ? (
-          <>
-            {user.orders.map((order) => (
-              <div key={order._id}>
-                  {order.products.map(({ _id, image, name, size }, index) => (
-                    <div key={index}>
-                      <Link to={`/products/${_id}`}>
-                        <img
-                        className="productImg"
-                        src={`/images/${image}`}
-                        alt={name}
-                      />
-                      </Link>
-                      <div>{size}</div>
-                    </div>
+<>
+<ClosetList />
+      <div className="container my-1">
+
+
+        {user ? (
+         <>
+             {user.orders.map((order) => (
+              <div key={order._id} className="my-2">
+                <div className="flex-row">
+                  {order.products.map(({ _id, image, name, price }, index) => (
+                    <div key={index} >
+                     
+                      </div>
+
                   ))}
                 </div>
+              </div>
             ))}
           </>
         ) : null}
-</>
+      </div>
+    </>
   );
 }
 
