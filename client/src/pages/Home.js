@@ -1,4 +1,7 @@
 import React from "react";
+
+import HomePage from "../components/HomePage/index";
+
 import Login from "../pages/Login"
 //import Signup from "../pages/Signup"
 
@@ -24,6 +27,7 @@ const Home = () => {
         <h2>Click on 'Signup' or 'Login' to get started!  Happy Threaddin'!</h2>
       </div>
     </div>
+
   );
 };
 

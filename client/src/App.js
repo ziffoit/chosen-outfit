@@ -25,7 +25,7 @@ import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 //Added by Eric ----------------
-import MyCloset from './pages/myCloset';
+import Closet from './pages/Closet';
 import ViewMyCloset from './pages/viewMyCloset.js';
 import Outfits from './pages/Outfits';
 //Added by Eric ----------------
@@ -63,7 +63,7 @@ function App() {
               <Route exact path="/success" component={Success} />
               <Route exact path="/orderHistory" component={OrderHistory} />
               {/*added by Eric-----------------------------------*/}
-              <Route exact path="/myCloset" component={MyCloset} />
+              <Route exact path="/closet" component={Closet} />
               <Route exact path="/viewMyCloset" component={ViewMyCloset} />
               <Route exact path="/outfits" component={Outfits} />
               {/*-------------------------------------------------*/}

@@ -22,8 +22,7 @@ function Success() {
       }
 
       setTimeout(() => {
-         {/*--------Eric changed route to store-----*/}
-        window.location.assign('/store');
+        window.location.assign('/');
       }, 3000);
     }
 

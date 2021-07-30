@@ -18,8 +18,8 @@ function Navbar() {
           <Bars />
         <NavMenu>
 {/*----------Added by Eric-------*/}
-            <NavLink to="/myCloset" activeStyle>
-              My Closet
+            <NavLink to="/Closet" activeStyle>
+              Closet
             </NavLink>
             <NavLink to="/store" activeStyle>
               Store
@@ -58,7 +58,7 @@ function Navbar() {
     <Nav>
 {/*----------Added by Eric------------*/}
 <NavLink to='/' activeStyle>
-    <img src="images/threadz.png" alt='logo'/>
+    <img src="images/chosen-outfit-logo.png" alt='logo'/>
 </NavLink>
 {/*----------Added by Eric------------*/}
 <Bars />

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const myCloset = () => {
   return (
-    <div style={{ backgroundImage: "url(/images/myClosetBackground.jpg)",  backgroundRepeat: 'no-repeat', backgroundSize: 'cover',  backgroundPosition: 'inherit',
-		height: '100vh', overflow: 'hidden' }}>
+    <div style={{ backgroundImage: "url(/images/myClosetBackground.jpg)",  backgroundRepeat: 'no-repeat', backgroundSize: 'cover',
+    backgroundAttachment:'fixed', height: '100vh', overflow: 'hidden' }}>
     <br />
     <br />
     <br />
@@ -14,7 +14,7 @@ const myCloset = () => {
     <br />
     <br />
     <br />
-    <br />
+
     <div class="d-flex justify-content-center">
     <div class="row-center">
     <Link to="/outfits">
@@ -25,9 +25,7 @@ const myCloset = () => {
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <br />
+
     <Link to="/viewMyCloset">
     <img src="images/button_view-your-closet.png" />
     </Link>
@@ -36,29 +34,13 @@ const myCloset = () => {
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <br />
     <Link to="/store">
     <img src="images/button_go-to-store.png" />
     </Link>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
-
 
     </div>
     </div>
     </div>
-    
-
-
 
 
 );

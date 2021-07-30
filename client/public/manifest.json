@@ -1,19 +1,19 @@
 {
-  "short_name": "Threadz",
+  "short_name": "Chosen Outfit",
   "name": "Thread Zeppelin's Trapped in a Closet",
   "icons": [
     {
-      "src": "threadz.ico",
+      "src": "chosenoutfit.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "threadz192.png",
+      "src": "chosenoutfit192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "threadz512.png",
+      "src": "chosenoutfit512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
