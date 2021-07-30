@@ -39,7 +39,7 @@ function NewItem(props) {
 //   category: Category
   return (
     <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
+      <Link to="/closet">← Go back to Closet</Link>
 
       <h2>Add a New Item to Your Closet</h2>
       <form onSubmit={handleFormSubmit}>
