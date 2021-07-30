@@ -30,10 +30,10 @@ function Login(props) {
   };
 
   return (
-    <div className="my-1 loginCont mx-auto">
+    <div className="loginCont mx-auto justify-content-center">
       <Link to="/signup">← Go to Signup</Link>
 
-      <h2>Login</h2>
+      <h2 className="text-center mt-4">Login</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
           <label htmlFor="email">Email address:</label>
@@ -60,7 +60,7 @@ function Login(props) {
             <p className="error-text">The provided credentials are incorrect</p>
           </div>
         ) : null}
-        <div className="flex-row flex-end">
+        <div className="flex-row justify-content-center loginBtnRow">
           <button type="submit">Submit</button>
         </div>
       </form>
