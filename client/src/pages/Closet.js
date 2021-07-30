@@ -8,9 +8,10 @@ const myCloset = () => {
   return (
     <div style={{ backgroundImage: "url(/images/myClosetBackground.jpg)",  backgroundRepeat: 'no-repeat', backgroundSize: 'cover',
     backgroundAttachment:'fixed', height: '100vh', overflow: 'hidden' }}>
-<div className="container p-2 mt-4">
+<div className="container button p-2 mt-4">
 <Link to="/newItem">
-<h2><FaPlusSquare size={40}/>:Add A New Item</h2>
+<button style={{borderRadius:"10px", border: "4px solid rgb(255, 255, 255 )", boxShadow: "4px 4px 4px 0px rgb(211,211,211)"}}>
+  <FaPlusSquare size={40} />:Add A New Item</button>
 </Link>
 </div>
 

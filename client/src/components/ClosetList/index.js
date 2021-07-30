@@ -20,9 +20,6 @@ function ClosetList() {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
 
-
-
-  
   const { userData } = useQuery(QUERY_USER);
 	let user;
 	if (userData) {
