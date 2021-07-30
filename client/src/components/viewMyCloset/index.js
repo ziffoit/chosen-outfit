@@ -22,13 +22,18 @@ function MyCloset() {
 
         {user ? (
          <>
-             {user.orders.map((order) => (
-              <div key={order._id} className="my-2">
+             {user.clothes.map((clothes) => (
+              <div key={clothes._id} className="my-2">
                 <div className="flex-row">
-                  {order.products.map(({ _id, image, name, price }, index) => (
+                  {clothes.products.map(({ _id, image, name, price }, index) => (
                     <div key={index} >
-                     
-                      </div>
+                      
+                      <Link to={`/products/${_id}`}>
+                        <img alt={name} src={`/images/${image}`} />
+                        <p>{name}</p>
+                      </Link>
+                    
+                    </div>
 
                   ))}
                 </div>
