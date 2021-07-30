@@ -28,8 +28,8 @@ function Navbar() {
               Order History
             </NavLink>
           {/*----------Added by Cody-------*/}
-            <NavLink to="/picUpload" activeStyle>
-              Upload
+            <NavLink to="/newItem" activeStyle>
+              Add New Item
             </NavLink>
           {/*---------------- -------------*/}
             {/* this is not using the NavLink component to logout or user and then refresh the application to the start */}
