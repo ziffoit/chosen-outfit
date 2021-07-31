@@ -7,10 +7,6 @@ Welcome to the last clothing organization app you'll ever need!  This interactiv
 The deployed app can be viewed here: 
 [Chosen Outfit App] (https://link-will-go-here.herokuapp.com/)
 
-# Technologies used
-
-Sheesh, what technologies DIDN'T we use, amIright?
-
 # How it Works
 
 When you visit the app, if it is your first time utilizing it, you can click the 'sign-up' button and create a free account.  The sign-up page will be where you can enter your first and last name, your e-mail, and a unique password. (Note: this password is NOT the same as the password you use to access your e-mail.  For the sake of security, we recommend you create a password that is unique to the app.) 

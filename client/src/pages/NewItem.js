@@ -4,22 +4,21 @@ import { useMutation } from '@apollo/client';
 import { NEW_ITEM } from '../utils/mutations';
 
 function NewItem(props) {
-  const [formState, setFormState] = useState({ name: '', description: '', image: null, quantity: 0, price: 0.0, size: '' });
+  const [formState, setFormState] = useState({ name: '', description: '', image: null, price: 0.0, size: '' });
   const [newItem] = useMutation(NEW_ITEM);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    await newItem({
+    const user = await newItem({
       variables: {
         name: formState.name,
         description: formState.description,
-        image: formState.image,
-        quantity: formState.quantity,
-        price: formState.price,
-        // category: {name:formState.category},
+        price: parseFloat(formState.price),
         size: formState.size
       },
     });
+    setFormState({ name: '', description: '', image: null, price: 0.0, size: '' })
+    console.log("User returned ", user)
   };
 
   const handleChange = (event) => {
@@ -29,16 +28,9 @@ function NewItem(props) {
       [name]: value,
     });
   };
-//   _id: ID
-//   name: String
-//   description: String
-//   image: String
-//   quantity: Int
-//   price: Float
-//   category: Category
   return (
     <div className="container my-1">
-      <Link to="/closet">← Go back to Closet</Link>
+      <Link to="/viewMyCloset">← Go back to Closet</Link>
 
       <h2>Add a New Item to Your Closet</h2>
       <form onSubmit={handleFormSubmit}>
@@ -46,7 +38,7 @@ function NewItem(props) {
           <label htmlFor="name">Name:</label>
           <input
             placeholder="Name"
-            name="Name"
+            name="name"
             type="text"
             id="name"
             onChange={handleChange}
@@ -56,7 +48,7 @@ function NewItem(props) {
           <label htmlFor="description">Description:</label>
           <input
             placeholder="Description"
-            name="Description"
+            name="description"
             type="text"
             id="description"
             onChange={handleChange}
@@ -66,7 +58,7 @@ function NewItem(props) {
           <label htmlFor="image">Image:</label>
           <input
             placeholder="Image"
-            name="Image"
+            name="image"
             type="image"
             id="image"
             alt="clothing image"
@@ -74,21 +66,12 @@ function NewItem(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="quantity">Quantity:</label>
-          <input
-            placeholder="Quantity"
-            name="Quantity"
-            type="number"
-            id="quantity"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
           <label htmlFor="price">Price:</label>
           <input
             placeholder="Price"
-            name="Price"
-            type="number"
+            name="price"
+            type="number" 
+            step="0.01"
             id="price"
             onChange={handleChange}
           />
@@ -107,7 +90,7 @@ function NewItem(props) {
           <label htmlFor="size">Size:</label>
           <input
             placeholder="Size"
-            name="Size"
+            name="size"
             type="text"
             id="size"
             onChange={handleChange}

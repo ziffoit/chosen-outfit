@@ -13,7 +13,6 @@ const typeDefs = gql`
     category: Category
     name: String
     description: String
-    quantity: Int
     price: Float
     size: String
   }
@@ -61,10 +60,8 @@ const typeDefs = gql`
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
-
-    newItem(name: String!, description: String!, image: String, quantity: Int, price: Float, size: String!): Product
+    newItem(name: String!, description: String!, image: String, price: Float, size: String!): User
 
   }
 `;
