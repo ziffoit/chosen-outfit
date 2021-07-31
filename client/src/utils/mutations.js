@@ -20,7 +20,6 @@ export const ADD_ORDER = gql`
         name
         description
         price
-        quantity
         category {
           name
         }
@@ -55,7 +54,6 @@ mutation newItem(
   $name: String!
   $description: String!
   $image: String
-  $quantity: Int
   $price: Float
   $size: String!
 ) {
@@ -63,20 +61,35 @@ mutation newItem(
     name: $name
     description: $description
     image: $image
-    quantity: $quantity
     price: $price
     size: $size
   ) {
-    _id
-    name
-    description
-    price
-    quantity
-    size
-    category {
-      name
+    firstName
+    lastName
+    orders {
+      _id
+      purchaseDate
+      products {
+        _id
+        name
+        description
+        price
+        image
+        size
+      }
+    }
+    clothes {
+      _id
+      wornDate
+      products {
+        _id
+        name
+        description
+        price
+        image
+        size
+      }
     }
   }
 }
-
 `;

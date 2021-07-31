@@ -62,7 +62,6 @@ export const QUERY_USER = gql`
           name
           description
           price
-          quantity
           image
 					size
         }
@@ -75,7 +74,6 @@ export const QUERY_USER = gql`
           name
           description
           price
-          quantity
           image
 					size
         }
