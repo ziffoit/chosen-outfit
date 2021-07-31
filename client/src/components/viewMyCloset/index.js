@@ -6,12 +6,12 @@ import { QUERY_USER } from "../../utils/queries";
 // import ClosetItem from "../ClosetItem";
 
 function MyCloset() {
-    const { data } = useQuery(QUERY_USER);
-
-    console.log("Data is", data);
+	const { data } = useQuery(QUERY_USER);
+	
     let clothes;
-    if (data) {
-        const user = data.user;
+    if (data){
+		const user = data.user;
+		console.log("User is ", user)
         if (user) {
             clothes = data.user.clothes;
         }
@@ -20,10 +20,11 @@ function MyCloset() {
     if (!clothes) return null;
 
     const buildCard = (id, image, name, description, size, index) => {
+        // if (!name) return null;
         return (
             <div key={`closet-item-${index}`}>
                 <div className="flip-card px-1 py-1">
-                    <div className="flip-card-inner">
+                    <div className="flip-card-inner ">
                         <div className="flip-card-front">
                             {image ? (
                                 <img
@@ -50,7 +51,6 @@ function MyCloset() {
         );
     };
     const closetItems = clothes.map((closet) => {
-        console.log("Closet is ", closet);
         return closet.products.map((product, index) => {
             console.log("Product is ", product);
             return buildCard(

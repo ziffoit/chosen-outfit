@@ -20,7 +20,6 @@ export const ADD_ORDER = gql`
         name
         description
         price
-        quantity
         category {
           name
         }
@@ -55,7 +54,6 @@ mutation newItem(
   $name: String!
   $description: String!
   $image: String
-  $quantity: Int
   $price: Float
   $size: String!
 ) {
@@ -63,7 +61,6 @@ mutation newItem(
     name: $name
     description: $description
     image: $image
-    quantity: $quantity
     price: $price
     size: $size
   ) {
@@ -77,7 +74,6 @@ mutation newItem(
         name
         description
         price
-        quantity
         image
         size
       }
@@ -90,7 +86,6 @@ mutation newItem(
         name
         description
         price
-        quantity
         image
         size
       }

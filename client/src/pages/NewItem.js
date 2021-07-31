@@ -4,22 +4,20 @@ import { useMutation } from '@apollo/client';
 import { NEW_ITEM } from '../utils/mutations';
 
 function NewItem(props) {
-  const [formState, setFormState] = useState({ name: '', description: '', image: null, quantity: 0, price: 0.0, size: '' });
+  const [formState, setFormState] = useState({ name: '', description: '', image: null, price: 0.0, size: '' });
   const [newItem] = useMutation(NEW_ITEM);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    debugger;
     const user = await newItem({
       variables: {
         name: formState.name,
         description: formState.description,
-        image: formState.image,
-        quantity: formState.quantity,
-        price: formState.price,
+        price: parseFloat(formState.price),
         size: formState.size
       },
     });
+    setFormState({ name: '', description: '', image: null, price: 0.0, size: '' })
     console.log("User returned ", user)
   };
 
@@ -30,16 +28,9 @@ function NewItem(props) {
       [name]: value,
     });
   };
-//   _id: ID
-//   name: String
-//   description: String
-//   image: String
-//   quantity: Int
-//   price: Float
-//   category: Category
   return (
     <div className="container my-1">
-      <Link to="/closet">← Go back to Closet</Link>
+      <Link to="/viewMyCloset">← Go back to Closet</Link>
 
       <h2>Add a New Item to Your Closet</h2>
       <form onSubmit={handleFormSubmit}>
@@ -75,21 +66,12 @@ function NewItem(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="quantity">Quantity:</label>
-          <input
-            placeholder="Quantity"
-            name="quantity"
-            type="number"
-            id="quantity"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
           <label htmlFor="price">Price:</label>
           <input
             placeholder="Price"
             name="price"
-            type="number"
+            type="number" 
+            step="0.01"
             id="price"
             onChange={handleChange}
           />
