@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Category, Order, Closet } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -97,18 +97,31 @@ const resolvers = {
       return { token, user };
     },
 
-    newItem: async (parent, args) => {
-      const user = await User.create(args);
-      const token = signToken(user);
+    // newItem: async (parent, args) => {
+    //   const product = await Product.create(args);
 
-      if (args.user) {
-        const item = new Order({ products });
+    //   if () {
+    //     const item = new Order({ products });
 
-        return item;
+    //     return item;
+    //   }
+
+
+    // },
+
+    newItem: async (parent, args, context) => {
+      console.log(context);
+      if (context.user) {
+        const product = new Product(args);
+        const closet = new Closet({products: [product]})
+        await User.findByIdAndUpdate(context.user._id, { $push: { clothes: closet } });
+
+        return product;
       }
 
-
+      throw new AuthenticationError('Not logged in');
     },
+
     addOrder: async (parent, { products }, context) => {
       console.log(context);
       if (context.user) {

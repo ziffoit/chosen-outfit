@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import Auth from '../utils/auth';
 import { NEW_ITEM } from '../utils/mutations';
 
 function NewItem(props) {
-  const [formState, setFormState] = useState({ name: '', description: '', image: null, quantity: 0, price: '', size: '' });
+  const [formState, setFormState] = useState({ name: '', description: '', image: null, quantity: 0, price: 0.0, size: '' });
   const [newItem] = useMutation(NEW_ITEM);
 
   const handleFormSubmit = async (event) => {
@@ -89,7 +88,7 @@ function NewItem(props) {
           <input
             placeholder="Price"
             name="Price"
-            type="text"
+            type="number"
             id="price"
             onChange={handleChange}
           />
