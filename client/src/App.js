@@ -28,7 +28,17 @@ import Closet from './pages/Closet';
 import ViewMyCloset from './pages/viewMyCloset.js';
 import Outfits from './pages/Outfits';
 //Added by Eric ----------------
+// Storage engine ----------------
+// const multer = require('multer');
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.post('/uploadphoto', upload.single('picture'), (req, res) => {
+//   var img =fs.readFileSync(req.file.path);
+//   var encode_image = img.toString('base64');
+import ImageUpload from './pages/ImageUpload';
 
+// ---------------------------------
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -71,6 +81,8 @@ function App() {
               <Route exact path="/store" component={Store} />
               <Route exact path="/drag" component={Drag} />
               {/*-------------------------------------------------*/}
+              {/* Image upload path ------------------------------------------------------------------------------------------------------------ */}
+              <Route exact path="/imageUpload" component={ImageUpload} />
               <Route exact path="/newItem" component={NewItem} />
               <Route component={NoMatch} />
             </Switch>
