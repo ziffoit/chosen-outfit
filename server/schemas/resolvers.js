@@ -97,26 +97,16 @@ const resolvers = {
       return { token, user };
     },
 
-    // newItem: async (parent, args) => {
-    //   const product = await Product.create(args);
-
-    //   if () {
-    //     const item = new Order({ products });
-
-    //     return item;
-    //   }
-
-
-    // },
 
     newItem: async (parent, args, context) => {
       console.log(context);
       if (context.user) {
         const product = new Product(args);
-        const closet = new Closet({products: [product]})
-        await User.findByIdAndUpdate(context.user._id, { $push: { clothes: closet } });
-
-        return product;
+        const closet = new Closet({ products : [product] })
+        const user = await User.findById(context.user._id)
+        user.clothes.push(closet)
+        await user.save()
+        return user;
       }
 
       throw new AuthenticationError('Not logged in');

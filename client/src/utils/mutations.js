@@ -67,16 +67,34 @@ mutation newItem(
     price: $price
     size: $size
   ) {
-    _id
-    name
-    description
-    price
-    quantity
-    size
-    category {
-      name
+    firstName
+    lastName
+    orders {
+      _id
+      purchaseDate
+      products {
+        _id
+        name
+        description
+        price
+        quantity
+        image
+        size
+      }
+    }
+    clothes {
+      _id
+      wornDate
+      products {
+        _id
+        name
+        description
+        price
+        quantity
+        image
+        size
+      }
     }
   }
 }
-
 `;

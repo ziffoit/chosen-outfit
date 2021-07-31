@@ -9,17 +9,18 @@ function NewItem(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    await newItem({
+    debugger;
+    const user = await newItem({
       variables: {
         name: formState.name,
         description: formState.description,
         image: formState.image,
         quantity: formState.quantity,
         price: formState.price,
-        // category: {name:formState.category},
         size: formState.size
       },
     });
+    console.log("User returned ", user)
   };
 
   const handleChange = (event) => {
@@ -46,7 +47,7 @@ function NewItem(props) {
           <label htmlFor="name">Name:</label>
           <input
             placeholder="Name"
-            name="Name"
+            name="name"
             type="text"
             id="name"
             onChange={handleChange}
@@ -56,7 +57,7 @@ function NewItem(props) {
           <label htmlFor="description">Description:</label>
           <input
             placeholder="Description"
-            name="Description"
+            name="description"
             type="text"
             id="description"
             onChange={handleChange}
@@ -66,7 +67,7 @@ function NewItem(props) {
           <label htmlFor="image">Image:</label>
           <input
             placeholder="Image"
-            name="Image"
+            name="image"
             type="image"
             id="image"
             alt="clothing image"
@@ -77,7 +78,7 @@ function NewItem(props) {
           <label htmlFor="quantity">Quantity:</label>
           <input
             placeholder="Quantity"
-            name="Quantity"
+            name="quantity"
             type="number"
             id="quantity"
             onChange={handleChange}
@@ -87,7 +88,7 @@ function NewItem(props) {
           <label htmlFor="price">Price:</label>
           <input
             placeholder="Price"
-            name="Price"
+            name="price"
             type="number"
             id="price"
             onChange={handleChange}
@@ -107,7 +108,7 @@ function NewItem(props) {
           <label htmlFor="size">Size:</label>
           <input
             placeholder="Size"
-            name="Size"
+            name="size"
             type="text"
             id="size"
             onChange={handleChange}

@@ -15,7 +15,7 @@ backgroundSize: 'cover',  height: '100vh' }}>
 <div className="container p-2 mt-4">
 <Link to="/newItem">
 <button style={{borderRadius:"10px", border: "4px solid rgb(255, 255, 255 )", boxShadow: "4px 4px 4px 0px rgb(211,211,211)"}}>
-  <FaPlusSquare size={40} />:Add A New Item</button>
+  <FaPlusSquare size={40} />Add A New Item</button>
 </Link>
 </div>
 
