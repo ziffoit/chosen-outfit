@@ -20,16 +20,6 @@ const server = new ApolloServer({
   context: authMiddleware
 });
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb+srv://ziffoit:<sted_bilk3dond0BEF>@cluster0.qpasb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-);
-
 server.applyMiddleware({ app });
 // Express static files
 app.use(express.static('/uploads',express.static('uploads')));
