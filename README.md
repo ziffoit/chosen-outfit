@@ -5,7 +5,7 @@
 Welcome to the last clothing organization app you'll ever need!  This interactive app is a virtual closet where users have complete control over the clothes that they own.  While using this app, a user can view, manage, organize, and even sell their items of clothing!  
 
 The deployed app can be viewed here: 
-[Chosen Outfit App] (https://link-will-go-here.herokuapp.com/)
+[Chosen Outfit App] (https://chosen-outfit.herokuapp.com/)
 
 # How it Works
 
